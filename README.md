@@ -5,11 +5,11 @@ Anyone is free to edit this game if they would like to expand upon it.
 
 
 ## Contributors
-Flootow: https://github.com/Flootow
+<a href="https://github.com/Flootow">Flootow</a>
 
-AJ213: https://github.com/AJ213
+<a href="https://github.com/AJ213">AJ213</a> 
 
 ## Downloads
-Cleaned Version: https://www.dropbox.com/sh/0i0dwbpzcw215go/AAABXExnaRjaMrkoTOYjOHOla?dl=0
-
-24 Hour Version: https://www.dropbox.com/sh/ltzec8p9jjnf30y/AACS0eOFnjORVtv1aRHqGRZDa?dl=0
+ <a href="https://www.dropbox.com/sh/0i0dwbpzcw215go/AAABXExnaRjaMrkoTOYjOHOla?dl=0">Cleaned Version</a>
+ 
+<a href="https://www.dropbox.com/sh/ltzec8p9jjnf30y/AACS0eOFnjORVtv1aRHqGRZDa?dl=0">24-Hour Version</a>

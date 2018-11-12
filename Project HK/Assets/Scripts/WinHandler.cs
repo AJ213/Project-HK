@@ -1,14 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WinHandler : MonoBehaviour
 {
-    private GameObject[] enemies;
-    private float totalStartingEnemies;
     public float enemiesLeft;
     public GameObject shield;
-
+    private GameObject[] enemies;
+    private float totalStartingEnemies;
+    private void OnDestroy()
+    {
+        HealthScript.OnDeath -= WeakenShield;
+    }
+    private void OnDisable()
+    {
+        HealthScript.OnDeath -= WeakenShield;
+    }
+    private void OnEnable()
+    {
+        HealthScript.OnDeath += WeakenShield;
+    }
     private void Start()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -16,22 +25,7 @@ public class WinHandler : MonoBehaviour
         enemiesLeft = totalStartingEnemies;
     }
 
-    private void OnEnable()
-    {
-        HealthScript.OnDeath += WeakenShield;
-    }
-
-    private void OnDisable()
-    {
-        HealthScript.OnDeath -= WeakenShield;
-    }
-
-    private void OnDestroy()
-    {
-        HealthScript.OnDeath -= WeakenShield;
-    }
-
-    void WeakenShield(GameObject killIt)
+    private void WeakenShield(GameObject killIt)
     {
         if (killIt.tag == "Enemy")
         {
@@ -46,5 +40,4 @@ public class WinHandler : MonoBehaviour
             }
         }
     }
-
 }

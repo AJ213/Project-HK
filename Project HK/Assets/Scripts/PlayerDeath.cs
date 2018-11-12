@@ -1,25 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerDeath : MonoBehaviour {
-
-    private void OnEnable()
-    {
-        HealthScript.OnDeath += KillPlayer;
-    }
-
-    private void OnDisable()
-    {
-        HealthScript.OnDeath -= KillPlayer;
-    }
-
-    private void OnDestroy()
-    {
-        HealthScript.OnDeath -= KillPlayer;
-    }
-
-    void KillPlayer(GameObject killIt)
+public class PlayerDeath : MonoBehaviour
+{
+    private void KillPlayer(GameObject killIt)
     {
         if (killIt == this.gameObject)
         {
@@ -27,5 +10,17 @@ public class PlayerDeath : MonoBehaviour {
             //GameObject.FindGameObjectWithTag("GameController").GetComponent<LevelHandler>().Restart();
             //Destroy(this.gameObject);
         }
+    }
+    private void OnDestroy()
+    {
+        HealthScript.OnDeath -= KillPlayer;
+    }
+    private void OnDisable()
+    {
+        HealthScript.OnDeath -= KillPlayer;
+    }
+    private void OnEnable()
+    {
+        HealthScript.OnDeath += KillPlayer;
     }
 }

@@ -112,9 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab08bee4927a43b46b8056b39f138143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  aliveDuration: 30
+  despawnDistance: 40
   directionDegrees: 0
-  despawnDistance: 100
+  speed: 2
 --- !u!136 &136191566046262174
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -1,25 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float playerProximity;
+    public float[] destinationProximity;
     public Transform[] newPos1;
     public Vector3[] newPos2;
-    Vector3 newPos;
+    public float playerProximity;
     public float[] speed;
-    public float[] destinationProximity;
+    private int currentStep;
+    private Vector3 newPos;
+    private GameObject player;
 
-    int currentStep;
-
-    GameObject player;
-    private void Start()
+    private float DistanceBetween(Vector3 pos1, Vector3 pos2)
     {
-        currentStep = 0;
-        player = GameObject.FindGameObjectWithTag("Player");
+        return Mathf.Sqrt(Mathf.Pow(pos1.x - pos2.x, 2) + Mathf.Pow(pos1.y - pos2.y, 2) + Mathf.Pow(pos1.z - pos2.z, 2));
     }
-
     private void FixedUpdate()
     {
         if (DistanceBetween(this.gameObject.transform.position, player.transform.position) <= playerProximity)
@@ -42,10 +37,9 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
-
-
-    float DistanceBetween(Vector3 pos1, Vector3 pos2)
+    private void Start()
     {
-        return Mathf.Sqrt(Mathf.Pow(pos1.x - pos2.x, 2) + Mathf.Pow(pos1.y - pos2.y, 2) + Mathf.Pow(pos1.z - pos2.z, 2));
+        currentStep = 0;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 }

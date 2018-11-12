@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
-    [SerializeField] bool isDestructable;
+    private AudioSource deathSound;
     [SerializeField] private float health;
+    private AudioSource hitSound;
+    [SerializeField] private bool isDestructable;
 
     public float Health
     {
@@ -15,7 +15,7 @@ public class HealthScript : MonoBehaviour
             if (isDestructable)
             {
                 health = value;
-                if(GameObject.FindGameObjectWithTag("Player") != this)
+                if (GameObject.FindGameObjectWithTag("Player") != this)
                 {
                     hitSound.Play();
                 }
@@ -27,15 +27,14 @@ public class HealthScript : MonoBehaviour
             }
         }
     }
-    AudioSource hitSound;
-    AudioSource deathSound;
+
+    public delegate void Die(GameObject killIt);
+
+    public static event Die OnDeath;
     private void Awake()
     {
         AudioSource[] audios = GameObject.FindGameObjectWithTag("Player").GetComponents<AudioSource>();
         hitSound = audios[1];
         deathSound = audios[2];
     }
-
-    public delegate void Die(GameObject killIt);
-    public static event Die OnDeath;
 }

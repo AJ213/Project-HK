@@ -112,9 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab08bee4927a43b46b8056b39f138143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  directionDegrees: 0
+  aliveDuration: 20
   despawnDistance: 500
+  directionDegrees: 0
+  speed: 2
 --- !u!135 &135228279871997810
 SphereCollider:
   m_ObjectHideFlags: 1

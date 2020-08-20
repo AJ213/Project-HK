@@ -6,9 +6,4 @@
 
 <a href="https://github.com/Flootow">Flootow</a>
 
-## Downloads
-<a href="https://www.dropbox.com/sh/ltzec8p9jjnf30y/AACS0eOFnjORVtv1aRHqGRZDa?dl=0">24-Hour Version</a>
-
-<a href="https://www.dropbox.com/sh/0i0dwbpzcw215go/AAABXExnaRjaMrkoTOYjOHOla?dl=0">Cleaned Version</a>
- 
 
